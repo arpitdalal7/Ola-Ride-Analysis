@@ -61,7 +61,7 @@ OLA-Ride-Analysis/
 ├── 📝 Documentation/
 │   ├── OLA-SQL-Queries.docx              # Complete SQL query documentation
 │   ├── OLA-DAX-Queries.docx              # All DAX measures and calculations
-│   └── OLA-Project-Documentation.docx     # Comprehensive project report
+│   └── OLA-Project-Documentation.pdf     # Comprehensive project report
 │
 ├── 🗃️ Data/
 │   └── ola_bookings.csv                  # Dataset (100K records)
@@ -272,7 +272,7 @@ Comprehensive documentation is provided in three separate documents:
 
 1. **[OLA-SQL-Queries.docx](Documentation/OLA-SQL-Queries.docx)** - All 10 SQL queries with explanations
 2. **[OLA-DAX-Queries.docx](Documentation/OLA-DAX-Queries.docx)** - Complete DAX measures and calculations
-3. **[OLA-Project-Documentation.docx](Documentation/OLA-Project-Documentation.docx)** - 6-7 page comprehensive project report
+3. **[OLA-Project-Documentation.docx](Documentation/OLA-Project-Documentation.pdf)** - 6-7 page comprehensive project report
 
 ***
 
