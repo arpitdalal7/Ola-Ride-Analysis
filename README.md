@@ -1,385 +1,469 @@
-# OLA Ride Analysis - Data Analytics Project
+```markdown
+# AI Supply Chain Analytics
 
-<div align="center">
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Arpit%20Dalal-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/arpitdalal9/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=flat&logo=github)](https://github.com/arpitdalal7/ai-supplychain-analytics)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat&logo=python)](https://www.python.org/)
 
+An end-to-end **AI-powered supply chain analytics system** that automates data collection, performs intelligent analysis, and generates actionable insights to optimize supply chain operations, improve delivery performance, and reduce operational costs.
 
+---
 
+## 📋 Overview
 
+This project demonstrates a modern approach to supply chain management by leveraging AI and automation tools to solve real-world operational challenges. The system automatically:
 
+- **Collects** order data from email attachments  
+- **Stores** data in a cloud PostgreSQL database  
+- **Cleans** and transforms data using AI-generated Python code  
+- **Analyzes** supply chain performance through 15+ KPIs  
+- **Generates** business insights and recommendations  
 
-**A comprehensive data analytics project analyzing 100,000+ ride-hailing bookings to uncover operational insights and drive business decisions**
+### Business Problem
 
-[View Documentation](#-documentation) -  [Explore Dashboard](#-dashboard-overview) -  [SQL Queries](#-sql-analysis) -  [DAX Measures](#-power-bi--dax)
+Supply chain operations often face challenges like:
 
-</div>
+- Late deliveries impacting customer satisfaction  
+- Incomplete order fulfillment causing revenue loss  
+- Lack of real-time visibility into performance metrics  
+- Manual data processing leading to delays and errors  
 
-***
+### Solution
 
-## 📊 Project Overview
+This automated analytics pipeline provides:
 
-This project presents an **end-to-end data analytics solution** for Ola, one of India's leading ride-hailing platforms. Through advanced SQL querying and interactive Power BI dashboards, the analysis reveals critical insights into booking patterns, customer behavior, revenue trends, and operational efficiency.
+- **Real-time monitoring** of supply chain KPIs (OTIF, Fill Rates, Cycle Time)  
+- **Predictive insights** for demand planning and inventory optimization  
+- **Automated reporting** reducing manual effort by 10-15x  
+- **Data-driven recommendations** for operational improvements  
 
-### 🎯 Objectives
+---
 
-- Analyze booking success rates and identify cancellation patterns
-- Evaluate vehicle type performance and revenue contribution
-- Understand customer segmentation and loyalty patterns
-- Identify peak demand periods and high-traffic locations
-- Provide actionable recommendations for business growth
+## ✨ Features
 
-### 🔑 Key Highlights
+### Core Capabilities
 
-- **100,000+ booking records** analyzed over one month
-- **5 interactive Power BI dashboard pages** with 25+ visualizations
-- **10 SQL views** answering critical business questions
-- **15+ DAX measures** for advanced analytics
-- **62% booking success rate** with detailed breakdown analysis
+- **🤖 Workflow Automation**
+  - Automated email monitoring and CSV extraction using n8n  
+  - Zero-touch data ingestion from vendors to database  
+  - Scheduled data pipeline execution  
 
-***
+- **📊 Supply Chain KPIs**
+  - On-Time Delivery % (OT%)  
+  - In-Full Delivery % (IF%)  
+  - On-Time-In-Full % (OTIF%) – primary success metric  
+  - Line Fill Rate & Volume Fill Rate  
+  - Order Cycle Time & Delivery Delay Analysis  
+  - Backorder Tracking & Lead Time Variability  
+
+- **🧹 AI-Powered Data Processing**
+  - Natural language prompts generate Python cleaning code  
+  - Automatic data type conversion and validation  
+  - Multi-table merging and feature engineering  
+  - Currency conversion (USD ↔ INR) for cross-country operations  
+
+- **📈 Business Intelligence**
+  - Customer performance analysis (OTIF gaps, revenue loss)  
+  - Product category fulfillment trends  
+  - Metro vs Non-Metro service level comparison  
+  - Demand variability and supply chain bottleneck identification  
+
+- **🎯 Interactive Dashboards**
+  - Real-time KPI monitoring  
+  - Custom visualizations using AI-generated charts  
+  - Drill-down capabilities for root cause analysis  
+
+---
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| **MySQL** | Database management and SQL querying |
-| **Power BI Desktop** | Interactive dashboard development |
-| **DAX** | Advanced calculations and measures |
-| **Excel** | Initial data processing |
-| **Git & GitHub** | Version control and collaboration |
+### Automation & Workflow
+- **n8n** – No-code workflow automation platform  
+- **Gmail API** – Email monitoring and attachment extraction  
 
-***
+### Database & Backend
+- **PostgreSQL** – Relational database for structured data storage  
+- **Supabase** – Managed PostgreSQL hosting with real-time APIs  
+- **SQL** – Data querying and transformation  
 
-## 📁 Project Structure
+### Analytics & AI
+- **Quadratic** – AI-powered spreadsheet with Python/SQL support  
+- **Python** – Data processing and analysis  
+  - `pandas` – Data manipulation  
+  - `numpy` – Numerical computing  
+  - `matplotlib` / `plotly` – Visualization  
+  - `requests` – API integration for exchange rates  
 
-```
-OLA-Ride-Analysis/
-│
-├── 📄 README.md                          # Project overview (this file)
-├── 📊 Dashboard/
-│   └── OLA-Dashboard.pbix                # Power BI dashboard file
-│
-├── 📝 Documentation/
-│   ├── OLA-SQL-Queries.docx              # Complete SQL query documentation
-│   ├── OLA-DAX-Queries.docx              # All DAX measures and calculations
-│   └── OLA-Project-Documentation.pdf     # Comprehensive project report
-│
-├── 🗃️ Data/
-│   └── ola_bookings.csv                  # Dataset (100K records)
-│
-├── 🖼️ Images/
-│   ├── dashboard-overview.png
-│   ├── revenue-analysis.png
-│   └── customer-segmentation.png
-│
-└── 📜 SQL/
-    └── ola_queries.sql                   # All SQL queries and views
-```
+### Data Modeling
+- **Star Schema** – Dimensional modeling (Fact & Dimension tables)  
+- **ETL Pipeline** – Extract, Transform, Load architecture  
 
-***
+---
 
-## 📊 Dashboard Overview
-
-The Power BI dashboard consists of **5 comprehensive pages**, each targeting specific business dimensions:
-
-### 1️⃣ Overview Page
-**KPIs Tracked:**
-- ✅ Completed Bookings: **67,000**
-- ❌ Lost Bookings: **33,000**
-- 💰 Total Revenue: **₹31.17M**
-- 🚗 Total Distance: **1.09M km**
-- 📏 Average Distance: **16.20 km**
-
-**Visualizations:**
-- Booking status breakdown (pie chart)
-- Daily booking trends (line chart)
-- Revenue by vehicle type (bar chart)
-- Top pickup/drop locations
-- Average ratings (gauge charts)
-
-### 2️⃣ Vehicle Analysis
-- Customer count by vehicle type
-- Revenue contribution percentage
-- Completed bookings by vehicle
-- Booking trends over time
-
-**Key Insight:** Bike category leads in volume (28.27%), while Prime SUV generates highest revenue (₹7.9M)
-
-### 3️⃣ Revenue Analysis
-- Revenue by customer (top 7)
-- Revenue by payment method
-- Monthly and quarterly trends
-- Vehicle-wise revenue breakdown
-
-**Key Insight:** UPI dominates with ₹14M revenue, followed by Cash at ₹11.9M
-
-### 4️⃣ Rider Analysis
-- Customer segmentation (New, Occasional, Frequent, Loyal)
-- Cancellation reasons breakdown
-- Payment method distribution
-- Detailed customer information table
-
-**Key Insight:** Customer segmentation reveals loyalty patterns for targeted marketing
-
-### 5️⃣ Location Analysis
-- Monthly distance trends
-- Busy time slots (8 time periods)
-- Top 7 high-demand areas
-- Weekday vs weekend patterns
-
-**Key Insight:** Multiple peak periods identified for optimal driver deployment
-
-***
-
-## 🔍 SQL Analysis
-
-### Database Setup
-```sql
-CREATE DATABASE Ola;
-USE Ola;
-```
-
-### Key Business Questions Answered
-
-| # | Question | View Created |
-|---|----------|--------------|
-| 1 | What are all successful bookings? | `Successful_Bookings` |
-| 2 | Average ride distance per vehicle type? | `ride_distance_for_each_vehicle` |
-| 3 | Total customer cancellations? | `cancelled_rides_by_customers` |
-| 4 | Top 5 most frequent customers? | `Top_5_Customers` |
-| 5 | Driver cancellations (personal/car issues)? | `Rides_cancelled_by_Drivers_P_C_Issues` |
-| 6 | Max/Min driver ratings (Prime Sedan)? | `Max_Min_Driver_Rating` |
-| 7 | All UPI payment rides? | `UPI_Payment` |
-| 8 | Average customer rating per vehicle? | `AVG_Cust_Rating` |
-| 9 | Total successful ride revenue? | `total_successful_ride_value` |
-| 10 | Incomplete rides with reasons? | `Incomplete_Rides_Reason` |
-
-### Sample Query
-```sql
--- Retrieve all successful bookings
-CREATE VIEW Successful_Bookings AS
-SELECT * FROM bookings
-WHERE Booking_Status = 'Success';
-```
-
-📄 **[View Complete SQL Documentation](Documentation/OLA-SQL-Queries.docx)**
-
-***
-
-## 📐 Power BI & DAX
-
-### Key DAX Measures
-
-**KPIs:**
-```dax
-Completed Bookings = 
-CALCULATE(
-    COUNT('bookings'[Booking ID]),
-    'bookings'[Booking Status] = "Success"
-)
-
-Total Distance = SUM('bookings'[Ride Distance (km)])
-
-Avg Distance = AVERAGE('bookings'[Ride Distance (km)])
-```
-
-**Customer Segmentation:**
-```dax
-Ride Frequency = 
-VAR _rides = 
-    CALCULATE(
-        COUNT(bookings[Booking ID]),
-        ALLEXCEPT(bookings, bookings[Customer ID])
-    )
-RETURN
-    SWITCH(
-        TRUE(),
-        _rides = 1, "New Customer",
-        _rides <= 3, "Occasional",
-        _rides <= 6, "Frequent",
-        "Loyal"
-    )
-```
-
-**Time Slot Analysis:**
-```dax
-Time Slot = 
-VAR _hour = HOUR('bookings'[Time])
-RETURN
-    SWITCH(
-        TRUE(),
-        _hour >= 9 && _hour < 12, "09 AM - 12 PM",
-        _hour >= 12 && _hour < 15, "12 PM - 03 PM",
-        -- Additional time slots...
-        "Unknown"
-    )
-```
-
-📄 **[View Complete DAX Documentation](Documentation/OLA-DAX-Queries.docx)**
-
-***
-
-## 📈 Key Findings
-
-### 🎯 Operational Performance
-- **67.31%** booking success rate (room for improvement)
-- **19.59%** driver cancellations impact revenue
-- **7.68%** customer cancellations need attention
-
-### 🚗 Vehicle Insights
-- **Bike** category: Highest volume (28.27% bookings)
-- **Prime SUV**: Highest revenue (₹7.9M)
-- Balanced distribution across other vehicle types
-
-### 👥 Customer Behavior
-- **UPI** is preferred payment method (₹14M revenue)
-- Top customers generate **₹4-5K** individual revenue
-- **4.40 average rating** indicates good service quality
-
-### 📍 Location & Time Patterns
-- **Kharadi & Ravet** lead in booking counts
-- Multiple peak periods throughout the day
-- Consistent distance distribution across vehicle types
-
-***
-
-## 💡 Business Recommendations
-
-### 1. Reduce Cancellation Rates (27.27% combined)
-- ✅ Implement driver incentives for ride acceptance
-- ✅ Improve driver-customer matching algorithms
-- ✅ Address top cancellation reasons
-
-### 2. Optimize Vehicle Deployment
-- ✅ Balance fleet composition for revenue maximization
-- ✅ Deploy Prime SUVs during peak demand
-- ✅ Offer promotions on underutilized vehicles
-
-### 3. Enhance Digital Payments
-- ✅ Incentivize credit/debit card usage
-- ✅ Promote wallet adoption through loyalty programs
-- ✅ Ensure seamless payment experience
-
-### 4. Customer Retention Strategies
-- ✅ Loyalty programs for frequent customers
-- ✅ Re-engagement campaigns for occasional riders
-- ✅ First-ride incentives for new customers
-
-***
-
-## 📚 Documentation
-
-Comprehensive documentation is provided in three separate documents:
-
-1. **[OLA-SQL-Queries.docx](Documentation/OLA-SQL-Queries.docx)** - All 10 SQL queries with explanations
-2. **[OLA-DAX-Queries.docx](Documentation/OLA-DAX-Queries.docx)** - Complete DAX measures and calculations
-3. **[OLA-Project-Documentation.docx](Documentation/OLA-Project-Documentation.pdf)** - 6-7 page comprehensive project report
-
-***
-
-## 🚀 Getting Started
+## 📦 Installation
 
 ### Prerequisites
-- MySQL Server (8.0 or higher)
-- Power BI Desktop (latest version)
-- Basic understanding of SQL and DAX
 
-### Installation & Setup
+- Python 3.8 or higher  
+- PostgreSQL database (or Supabase account)  
+- n8n instance (cloud or self-hosted)  
+- Quadratic account (free tier available)  
 
-1. **Clone the repository**
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/arpitdalal7/ai-supplychain-analytics.git
+cd ai-supplychain-analytics
+```
+
+### Step 2: Set Up Python Environment
+
+```bash
+# Create virtual environment
+python -m venv venv
+
+# Activate virtual environment
+# On Windows:
+venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Step 3: Configure Database
+
+1. **Create Supabase Project**
+   - Sign up at [supabase.com](https://supabase.com)  
+   - Create new project and note connection string  
+
+2. **Run Database Schema**
    ```bash
-   git clone https://github.com/yourusername/ola-ride-analysis.git
-   cd ola-ride-analysis
+   psql -h <your-supabase-host> -U postgres -d postgres -f database/schema.sql
    ```
 
-2. **Import dataset into MySQL**
-   ```sql
-   CREATE DATABASE Ola;
-   USE Ola;
-   -- Import ola_bookings.csv into 'bookings' table
-   ```
+3. **Update Configuration**
+   - Copy `.env.example` to `.env`  
+   - Add your database credentials:
 
-3. **Run SQL queries**
+     ```env
+     DB_HOST=your-supabase-host
+     DB_PORT=5432
+     DB_NAME=postgres
+     DB_USER=postgres
+     DB_PASSWORD=your-password
+     ```
+
+### Step 4: Set Up n8n Workflow
+
+1. **Install n8n** (choose one method):
+
    ```bash
-   mysql -u root -p Ola < SQL/ola_queries.sql
+   # Option 1: npm
+   npm install n8n -g
+
+   # Option 2: Docker
+   docker run -it --rm --name n8n -p 5678:5678 n8nio/n8n
    ```
 
-4. **Open Power BI Dashboard**
-   - Open `Dashboard/OLA-Dashboard.pbix` in Power BI Desktop
-   - Update data source connection to your MySQL server
-   - Refresh data
+2. **Import Workflow**
+   - Open n8n at `http://localhost:5678`  
+   - Go to Workflows → Import from File  
+   - Select `workflows/email_to_database.json`  
 
-***
+3. **Configure Credentials**
+   - Add Gmail credentials for email monitoring  
+   - Add PostgreSQL credentials pointing to Supabase  
 
-## 📊 Dataset Information
+### Step 5: Set Up Quadratic
 
-| Attribute | Details |
-|-----------|---------|
-| **Total Records** | 100,000 bookings |
-| **Time Period** | 1 month (July 2024) |
-| **Location** | Bengaluru, India (50+ areas) |
-| **Booking Success Rate** | ~62% |
-| **Vehicle Types** | Auto, Bike, eBike, Mini, Prime Plus, Prime Sedan, Prime SUV |
-| **Payment Methods** | UPI, Cash, Credit Card, Debit Card, Wallet |
+1. Create account at [quadratichq.com](https://quadratichq.com)  
+2. Connect to your Supabase database  
+3. Import `quadratic/supply_chain_analysis.grid` workbook  
 
-### Data Columns (19 total)
-- Date, Time, Booking_ID, Booking_Status
-- Customer_ID, Vehicle_Type
-- Pickup_Location, Drop_Location
-- V_TAT, C_TAT
-- Cancellation indicators and reasons
-- Booking_Value, Payment_Method
-- Ride_Distance, Driver_Ratings, Customer_Rating
+---
 
-***
+## 🚀 Usage
 
-## 🎓 Skills Demonstrated
+### Running the Data Pipeline
 
-- ✅ **SQL**: Complex queries, aggregations, views, joins
-- ✅ **DAX**: Calculated measures, time intelligence, customer segmentation
-- ✅ **Power BI**: Dashboard design, data modeling, visualizations
-- ✅ **Business Analytics**: KPI tracking, trend analysis, insights generation
-- ✅ **Data Storytelling**: Clear communication of findings
-- ✅ **Problem Solving**: Actionable recommendations based on data
+#### 1. Start n8n Workflow
 
-***
+```bash
+# Start n8n
+n8n start
+
+# The workflow will automatically:
+# - Monitor Gmail inbox for vendor emails
+# - Extract CSV attachments
+# - Load data into PostgreSQL tables
+```
+
+#### 2. Load Sample Data (Optional)
+
+```bash
+# Load sample order data
+python scripts/load_sample_data.py
+
+# This will populate:
+# - fact_orders_aggregate
+# - fact_order_line
+# - dim_customers
+# - dim_products
+```
+
+#### 3. Run Data Cleaning & Analysis
+
+Open Quadratic and execute AI prompts:
+
+**Create Date Table:**
+
+```text
+Create a date table that has dates from 03-01-2025 to 05-31-2025
+```
+
+**Create Exchange Rate Table:**
+
+```text
+Create exchange_rate table for March 1 to May 17, 2025 
+using Open Exchange Rates API
+```
+
+**Generate fact_summary Table:**
+
+```text
+Create Python code that:
+1. Loads data from fact_order_line, dim_products, dim_customers, exchange_rate
+2. Cleans data (convert IDs to integers, remove nulls, standardize dates)
+3. Merges tables on product_id, customer_id, order_placement_date
+4. Calculates total_amount_inr (handles USD/INR conversion)
+5. Creates calculated columns: backorder_qty, order_cycle_time_days, 
+   delivery_delay_days, in_full_percent, on_time_flag
+```
+
+#### 4. Calculate Supply Chain KPIs
+
+```text
+Create the following KPIs:
+1. Total Order Lines
+2. Line Fill Rate
+3. Volume Fill Rate
+4. Total Orders
+5. On Time Delivery %
+6. In Full Delivery %
+7. On Time In Full %
+8. Order Cycle Time
+9. Backorder Rate
+10. Lead Time Variability
+```
+
+#### 5. Generate Business Insights
+
+```text
+Show top 5 customers based on order value and their OTIF%, IF%, OT%.
+Include customer_name, customer_id, and city
+```
+
+```text
+Filter the most recent 4 weeks. Aggregate by category: 
+total backorder_qty, average in_full_percent, and average delivery_delay_days.
+Return the five categories with highest backorder_qty
+```
+
+---
+
+## 📊 Project Structure
+
+```text
+ai-supplychain-analytics/
+│
+├── data/
+│   ├── sample_order_aggregate.csv
+│   └── sample_order_line.csv
+│
+├── database/
+│   ├── schema.sql
+│   └── seed_data.sql
+│
+├── workflows/
+│   └── email_to_database.json
+│
+├── quadratic/
+│   └── supply_chain_analysis.grid
+│
+├── scripts/
+│   ├── load_sample_data.py
+│   └── validate_kpis.py
+│
+├── docs/
+│   ├── PROJECT_DOCUMENTATION.pdf
+│   └── screenshots/
+│       ├── n8n_workflow.png
+│       ├── data_cleaning_prompt.png
+│       └── kpi_dashboard.png
+│
+├── requirements.txt
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
+### 🔗 Direct Folder Links
+
+- **Data:** [`/data`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/data)  
+- **Database:** [`/database`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/database)  
+- **Workflows:** [`/workflows`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/workflows)  
+- **Quadratic:** [`/quadratic`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/quadratic)  
+- **Scripts:** [`/scripts`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/scripts)  
+- **Docs:** [`/docs`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/docs)  
+
+---
+
+## 📈 Key Performance Indicators (KPIs)
+
+### Delivery Performance
+
+| KPI | Formula | Industry Benchmark |
+|-----|---------|-------------------|
+| **On-Time Delivery %** | (On-time orders / Total orders) × 100 | 90%+ |
+| **In-Full Delivery %** | (Complete orders / Total orders) × 100 | 95%+ |
+| **OTIF %** | (On-time AND In-full / Total orders) × 100 | 85%+ |
+
+### Operational Efficiency
+
+| KPI | Description | Target |
+|-----|-------------|--------|
+| **Line Fill Rate** | % of order lines delivered completely | 95%+ |
+| **Volume Fill Rate** | % of ordered quantity delivered | 98%+ |
+| **Order Cycle Time** | Avg days from order to delivery | < 5 days |
+
+### Risk & Variability
+
+| KPI | Measurement | Interpretation |
+|-----|------------|----------------|
+| **Lead Time Variability** | Std dev of cycle times | Lower = more reliable |
+| **Demand Variability** | Weekly quantity fluctuation | Informs safety stock |
+| **Backorder Rate** | % of lines with backorders | < 5% acceptable |
+
+---
+
+## 🎓 Learning Outcomes
+
+This project demonstrates proficiency in:
+
+- **Workflow Automation** – Building no-code data pipelines with n8n  
+- **Database Design** – Implementing star schema for analytics  
+- **ETL Development** – Extracting, transforming, loading supply chain data  
+- **AI Integration** – Leveraging AI for code generation and analysis  
+- **Business Analytics** – Calculating and interpreting supply chain KPIs  
+- **Data Visualization** – Creating actionable dashboards  
+- **Problem Solving** – Translating business problems into technical solutions  
+
+---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
-- Report bugs or issues
-- Suggest new features or analyses
-- Improve documentation
-- Submit pull requests
+Contributions are welcome! Here's how you can help:
 
-***
+### Reporting Issues
 
-## 📧 Contact
+- Use GitHub Issues to report bugs or suggest features  
+- Provide detailed description, steps to reproduce, and expected behavior  
 
-**Your Name**  
-📧 Email: arpitsunildalal@gmail.com
-💼 LinkedIn: (https://www.linkedin.com/in/arpitdalal9/)  
-🐙 GitHub: [@arpitdalal7](https://github.com/arpitdalal7)
+### Making Contributions
 
-***
+1. **Fork the repository**
 
-## 📜 License
+   ```bash
+   # Click "Fork" button on GitHub
+   ```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+2. **Create a feature branch**
 
-***
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
 
-## 🙏 Acknowledgments
+3. **Make your changes**
+   - Follow existing code style  
+   - Add comments for complex logic  
+   - Update documentation if needed  
 
-- Dataset created using ChatGPT for educational purposes
-- Inspired by real-world ride-hailing industry analytics
-- Tutorial reference: [The Developer  YouTube Channel](https://www.youtube.com/@The-Developer-BI)
+4. **Commit your changes**
 
-***
+   ```bash
+   git add .
+   git commit -m "Add: Brief description of changes"
+   ```
+
+5. **Push to your fork**
+
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+
+6. **Create Pull Request**
+   - Go to original repository on GitHub  
+   - Click "New Pull Request"  
+   - Select your fork and branch  
+   - Describe your changes clearly  
+
+### Development Guidelines
+
+- Write clear, self-documenting code  
+- Include docstrings for Python functions  
+- Test your changes before submitting  
+- Update README if adding new features  
+- Ensure backward compatibility  
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+```text
+MIT License
+
+Copyright (c) 2026 Arpit Dalal
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## 👨‍💻 Developed by
+
+**Arpit Dalal**
+
+- 💼 **LinkedIn:** [linkedin.com/in/arpitdalal9](https://www.linkedin.com/in/arpitdalal9/)  
+- 🐙 **GitHub:** [github.com/arpitdalal7](https://github.com/arpitdalal7)  
+- 📂 **Project Repository:** [ai-supplychain-analytics](https://github.com/arpitdalal7/ai-supplychain-analytics)  
+
+---
 
 <div align="center">
 
-**⭐ If you found this project helpful, please consider giving it a star!**
+**Built with 🧠 AI • ⚡ Automation • 📊 Data**  
 
-
+*Transforming supply chain operations through intelligent analytics*
 
 </div>
+```
