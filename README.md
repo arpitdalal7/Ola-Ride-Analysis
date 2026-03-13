@@ -1,469 +1,158 @@
+Great question! To add clickable links to your files in the README, you need to ensure the files are **actually in your GitHub repository** first. Here are the methods:
+
+## Method 1: Relative Links (Recommended for GitHub)
+
+Once you upload your files to GitHub, use relative paths:
+
 ```markdown
-# AI Supply Chain Analytics
+## 📚 Documentation
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Arpit%20Dalal-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/arpitdalal9/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=flat&logo=github)](https://github.com/arpitdalal7/ai-supplychain-analytics)
-[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat&logo=python)](https://www.python.org/)
+📄 **[SQL Queries Documentation](Documentation/OLA-SQL-Queries.docx)** - Complete SQL analysis with 10 queries
 
-An end-to-end **AI-powered supply chain analytics system** that automates data collection, performs intelligent analysis, and generates actionable insights to optimize supply chain operations, improve delivery performance, and reduce operational costs.
+📄 **[DAX Queries Documentation](Documentation/OLA-DAX-Queries.docx)** - All Power BI DAX measures
 
----
+📄 **[Project Documentation Report](Documentation/OLA-Project-Documentation.docx)** - Comprehensive 6-7 page report
 
-## 📋 Overview
+📊 **[Power BI Dashboard](Dashboard/OLA-Dashboard.pbix)** - Interactive dashboard file
 
-This project demonstrates a modern approach to supply chain management by leveraging AI and automation tools to solve real-world operational challenges. The system automatically:
+📁 **[Dataset](Data/ola_bookings.csv)** - 100K booking records
+```
 
-- **Collects** order data from email attachments  
-- **Stores** data in a cloud PostgreSQL database  
-- **Cleans** and transforms data using AI-generated Python code  
-- **Analyzes** supply chain performance through 15+ KPIs  
-- **Generates** business insights and recommendations  
+## Method 2: Using GitHub Raw URLs (For direct downloads)
 
-### Business Problem
+After uploading to GitHub, you can use raw URLs:
 
-Supply chain operations often face challenges like:
+```markdown
+## 📥 Quick Downloads
 
-- Late deliveries impacting customer satisfaction  
-- Incomplete order fulfillment causing revenue loss  
-- Lack of real-time visibility into performance metrics  
-- Manual data processing leading to delays and errors  
+- [Download SQL Queries (DOCX)](https://github.com/yourusername/ola-ride-analysis/raw/main/Documentation/OLA-SQL-Queries.docx)
+- [Download DAX Queries (DOCX)](https://github.com/yourusername/ola-ride-analysis/raw/main/Documentation/OLA-DAX-Queries.docx)
+- [Download Project Report (DOCX)](https://github.com/yourusername/ola-ride-analysis/raw/main/Documentation/OLA-Project-Documentation.docx)
+```
 
-### Solution
+## Method 3: Using Badges with Links
 
-This automated analytics pipeline provides:
+Make it more visually appealing:
 
-- **Real-time monitoring** of supply chain KPIs (OTIF, Fill Rates, Cycle Time)  
-- **Predictive insights** for demand planning and inventory optimization  
-- **Automated reporting** reducing manual effort by 10-15x  
-- **Data-driven recommendations** for operational improvements  
+```markdown
+## 📚 Project Documents
 
----
+[![SQL Queries](https://img.shields.io/badge/SQL-Queries-blue?style=for-the-badge&logo=mysql)](Documentation/OLA-SQL-Queries.docx)
+[![DAX Queries](https://img.shields.io/badge/DAX-Queries-yellow?style=for-the-badge&logo=powerbi)](Documentation/OLA-DAX-Queries.docx)
+[![Documentation](https://img.shields.io/badge/Project-Documentation-green?style=for-the-badge&logo=readme)](Documentation/OLA-Project-Documentation.docx)
+```
 
-## ✨ Features
+## Method 4: Table Format with Links
 
-### Core Capabilities
+```markdown
+## 📁 Repository Contents
 
-- **🤖 Workflow Automation**
-  - Automated email monitoring and CSV extraction using n8n  
-  - Zero-touch data ingestion from vendors to database  
-  - Scheduled data pipeline execution  
+| Document | Description | Link |
+|----------|-------------|------|
+| 📊 Power BI Dashboard | Interactive 5-page dashboard | [View/Download](Dashboard/OLA-Dashboard.pbix) |
+| 📄 SQL Queries | All 10 SQL views and queries | [View/Download](Documentation/OLA-SQL-Queries.docx) |
+| 📄 DAX Measures | Complete DAX documentation | [View/Download](Documentation/OLA-DAX-Queries.docx) |
+| 📄 Project Report | 6-7 page comprehensive report | [View/Download](Documentation/OLA-Project-Documentation.docx) |
+| 📁 Dataset | 100K booking records (CSV) | [View/Download](Data/ola_bookings.csv) |
+| 💻 SQL Scripts | All queries in .sql format | [View/Download](SQL/ola_queries.sql) |
+```
 
-- **📊 Supply Chain KPIs**
-  - On-Time Delivery % (OT%)  
-  - In-Full Delivery % (IF%)  
-  - On-Time-In-Full % (OTIF%) – primary success metric  
-  - Line Fill Rate & Volume Fill Rate  
-  - Order Cycle Time & Delivery Delay Analysis  
-  - Backorder Tracking & Lead Time Variability  
+## 🚀 Step-by-Step Implementation
 
-- **🧹 AI-Powered Data Processing**
-  - Natural language prompts generate Python cleaning code  
-  - Automatic data type conversion and validation  
-  - Multi-table merging and feature engineering  
-  - Currency conversion (USD ↔ INR) for cross-country operations  
+### 1. **Organize Your Files Locally**
+```
+ola-ride-analysis/
+├── README.md
+├── Documentation/
+│   ├── OLA-SQL-Queries.docx
+│   ├── OLA-DAX-Queries.docx
+│   └── OLA-Project-Documentation.docx
+├── Dashboard/
+│   └── OLA-Dashboard.pbix
+├── Data/
+│   └── ola_bookings.csv
+└── SQL/
+    └── ola_queries.sql
+```
 
-- **📈 Business Intelligence**
-  - Customer performance analysis (OTIF gaps, revenue loss)  
-  - Product category fulfillment trends  
-  - Metro vs Non-Metro service level comparison  
-  - Demand variability and supply chain bottleneck identification  
-
-- **🎯 Interactive Dashboards**
-  - Real-time KPI monitoring  
-  - Custom visualizations using AI-generated charts  
-  - Drill-down capabilities for root cause analysis  
-
----
-
-## 🛠️ Tech Stack
-
-### Automation & Workflow
-- **n8n** – No-code workflow automation platform  
-- **Gmail API** – Email monitoring and attachment extraction  
-
-### Database & Backend
-- **PostgreSQL** – Relational database for structured data storage  
-- **Supabase** – Managed PostgreSQL hosting with real-time APIs  
-- **SQL** – Data querying and transformation  
-
-### Analytics & AI
-- **Quadratic** – AI-powered spreadsheet with Python/SQL support  
-- **Python** – Data processing and analysis  
-  - `pandas` – Data manipulation  
-  - `numpy` – Numerical computing  
-  - `matplotlib` / `plotly` – Visualization  
-  - `requests` – API integration for exchange rates  
-
-### Data Modeling
-- **Star Schema** – Dimensional modeling (Fact & Dimension tables)  
-- **ETL Pipeline** – Extract, Transform, Load architecture  
-
----
-
-## 📦 Installation
-
-### Prerequisites
-
-- Python 3.8 or higher  
-- PostgreSQL database (or Supabase account)  
-- n8n instance (cloud or self-hosted)  
-- Quadratic account (free tier available)  
-
-### Step 1: Clone the Repository
-
+### 2. **Push to GitHub**
 ```bash
-git clone https://github.com/arpitdalal7/ai-supplychain-analytics.git
-cd ai-supplychain-analytics
+git init
+git add .
+git commit -m "Initial commit: OLA Ride Analysis Project"
+git branch -M main
+git remote add origin https://github.com/yourusername/ola-ride-analysis.git
+git push -u origin main
 ```
 
-### Step 2: Set Up Python Environment
+### 3. **Update README with Links**
 
-```bash
-# Create virtual environment
-python -m venv venv
+Replace the placeholder links in your README with the actual paths relative to your repository root.
 
-# Activate virtual environment
-# On Windows:
-venv\Scripts\activate
-# On macOS/Linux:
-source venv/bin/activate
+## ⚠️ Important Notes
 
-# Install dependencies
-pip install -r requirements.txt
-```
+1. **File Paths**: Use forward slashes `/` even on Windows
+2. **Case Sensitive**: GitHub is case-sensitive, so `Documentation/` ≠ `documentation/`
+3. **Spaces**: If folder names have spaces, GitHub handles them automatically
+4. **View vs Download**: 
+   - `.md`, `.txt`, `.csv` files will **display** in GitHub
+   - `.docx`, `.pbix`, `.xlsx` files will **download** when clicked
 
-### Step 3: Configure Database
+## 🎨 Enhanced README Section with Clickable Links
 
-1. **Create Supabase Project**
-   - Sign up at [supabase.com](https://supabase.com)  
-   - Create new project and note connection string  
+Here's a polished section you can add to your README:
 
-2. **Run Database Schema**
+```markdown
+---
+
+## 📦 Repository Contents
+
+### 📊 Interactive Dashboard
+[![Open Dashboard](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](Dashboard/OLA-Dashboard.pbix)
+
+Download the `.pbix` file and open in Power BI Desktop to explore all 5 interactive pages.
+
+### 📄 Documentation Files
+
+| File | Description | Format | Download |
+|------|-------------|--------|----------|
+| 📘 SQL Queries | All 10 SQL views with business questions | DOCX | [Download](Documentation/OLA-SQL-Queries.docx) |
+| 📙 DAX Measures | 15+ DAX calculations for Power BI | DOCX | [Download](Documentation/OLA-DAX-Queries.docx) |
+| 📗 Project Report | Complete 6-7 page documentation | DOCX | [Download](Documentation/OLA-Project-Documentation.docx) |
+
+### 🗃️ Data & Scripts
+
+- 📁 **Dataset**: [ola_bookings.csv](Data/ola_bookings.csv) (100,000 records)
+- 💾 **SQL Scripts**: [ola_queries.sql](SQL/ola_queries.sql) (All queries in one file)
+
+---
+
+## 🚀 Quick Start Guide
+
+1. **Clone the repository**
    ```bash
-   psql -h <your-supabase-host> -U postgres -d postgres -f database/schema.sql
+   git clone https://github.com/yourusername/ola-ride-analysis.git
    ```
 
-3. **Update Configuration**
-   - Copy `.env.example` to `.env`  
-   - Add your database credentials:
+2. **Download documentation**
+   - [SQL Queries](Documentation/OLA-SQL-Queries.docx)
+   - [DAX Queries](Documentation/OLA-DAX-Queries.docx)
+   - [Full Report](Documentation/OLA-Project-Documentation.docx)
 
-     ```env
-     DB_HOST=your-supabase-host
-     DB_PORT=5432
-     DB_NAME=postgres
-     DB_USER=postgres
-     DB_PASSWORD=your-password
-     ```
-
-### Step 4: Set Up n8n Workflow
-
-1. **Install n8n** (choose one method):
-
-   ```bash
-   # Option 1: npm
-   npm install n8n -g
-
-   # Option 2: Docker
-   docker run -it --rm --name n8n -p 5678:5678 n8nio/n8n
-   ```
-
-2. **Import Workflow**
-   - Open n8n at `http://localhost:5678`  
-   - Go to Workflows → Import from File  
-   - Select `workflows/email_to_database.json`  
-
-3. **Configure Credentials**
-   - Add Gmail credentials for email monitoring  
-   - Add PostgreSQL credentials pointing to Supabase  
-
-### Step 5: Set Up Quadratic
-
-1. Create account at [quadratichq.com](https://quadratichq.com)  
-2. Connect to your Supabase database  
-3. Import `quadratic/supply_chain_analysis.grid` workbook  
+3. **Open Power BI Dashboard**
+   - Download [OLA-Dashboard.pbix](Dashboard/OLA-Dashboard.pbix)
+   - Open in Power BI Desktop
+   - Refresh data connection
 
 ---
-
-## 🚀 Usage
-
-### Running the Data Pipeline
-
-#### 1. Start n8n Workflow
-
-```bash
-# Start n8n
-n8n start
-
-# The workflow will automatically:
-# - Monitor Gmail inbox for vendor emails
-# - Extract CSV attachments
-# - Load data into PostgreSQL tables
 ```
 
-#### 2. Load Sample Data (Optional)
-
-```bash
-# Load sample order data
-python scripts/load_sample_data.py
-
-# This will populate:
-# - fact_orders_aggregate
-# - fact_order_line
-# - dim_customers
-# - dim_products
-```
-
-#### 3. Run Data Cleaning & Analysis
-
-Open Quadratic and execute AI prompts:
-
-**Create Date Table:**
-
-```text
-Create a date table that has dates from 03-01-2025 to 05-31-2025
-```
-
-**Create Exchange Rate Table:**
-
-```text
-Create exchange_rate table for March 1 to May 17, 2025 
-using Open Exchange Rates API
-```
-
-**Generate fact_summary Table:**
-
-```text
-Create Python code that:
-1. Loads data from fact_order_line, dim_products, dim_customers, exchange_rate
-2. Cleans data (convert IDs to integers, remove nulls, standardize dates)
-3. Merges tables on product_id, customer_id, order_placement_date
-4. Calculates total_amount_inr (handles USD/INR conversion)
-5. Creates calculated columns: backorder_qty, order_cycle_time_days, 
-   delivery_delay_days, in_full_percent, on_time_flag
-```
-
-#### 4. Calculate Supply Chain KPIs
-
-```text
-Create the following KPIs:
-1. Total Order Lines
-2. Line Fill Rate
-3. Volume Fill Rate
-4. Total Orders
-5. On Time Delivery %
-6. In Full Delivery %
-7. On Time In Full %
-8. Order Cycle Time
-9. Backorder Rate
-10. Lead Time Variability
-```
-
-#### 5. Generate Business Insights
-
-```text
-Show top 5 customers based on order value and their OTIF%, IF%, OT%.
-Include customer_name, customer_id, and city
-```
-
-```text
-Filter the most recent 4 weeks. Aggregate by category: 
-total backorder_qty, average in_full_percent, and average delivery_delay_days.
-Return the five categories with highest backorder_qty
-```
-
----
-
-## 📊 Project Structure
-
-```text
-ai-supplychain-analytics/
-│
-├── data/
-│   ├── sample_order_aggregate.csv
-│   └── sample_order_line.csv
-│
-├── database/
-│   ├── schema.sql
-│   └── seed_data.sql
-│
-├── workflows/
-│   └── email_to_database.json
-│
-├── quadratic/
-│   └── supply_chain_analysis.grid
-│
-├── scripts/
-│   ├── load_sample_data.py
-│   └── validate_kpis.py
-│
-├── docs/
-│   ├── PROJECT_DOCUMENTATION.pdf
-│   └── screenshots/
-│       ├── n8n_workflow.png
-│       ├── data_cleaning_prompt.png
-│       └── kpi_dashboard.png
-│
-├── requirements.txt
-├── .env.example
-├── .gitignore
-└── README.md
-```
-
-### 🔗 Direct Folder Links
-
-- **Data:** [`/data`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/data)  
-- **Database:** [`/database`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/database)  
-- **Workflows:** [`/workflows`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/workflows)  
-- **Quadratic:** [`/quadratic`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/quadratic)  
-- **Scripts:** [`/scripts`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/scripts)  
-- **Docs:** [`/docs`](https://github.com/arpitdalal7/ai-supplychain-analytics/tree/main/docs)  
-
----
-
-## 📈 Key Performance Indicators (KPIs)
-
-### Delivery Performance
-
-| KPI | Formula | Industry Benchmark |
-|-----|---------|-------------------|
-| **On-Time Delivery %** | (On-time orders / Total orders) × 100 | 90%+ |
-| **In-Full Delivery %** | (Complete orders / Total orders) × 100 | 95%+ |
-| **OTIF %** | (On-time AND In-full / Total orders) × 100 | 85%+ |
-
-### Operational Efficiency
-
-| KPI | Description | Target |
-|-----|-------------|--------|
-| **Line Fill Rate** | % of order lines delivered completely | 95%+ |
-| **Volume Fill Rate** | % of ordered quantity delivered | 98%+ |
-| **Order Cycle Time** | Avg days from order to delivery | < 5 days |
-
-### Risk & Variability
-
-| KPI | Measurement | Interpretation |
-|-----|------------|----------------|
-| **Lead Time Variability** | Std dev of cycle times | Lower = more reliable |
-| **Demand Variability** | Weekly quantity fluctuation | Informs safety stock |
-| **Backorder Rate** | % of lines with backorders | < 5% acceptable |
-
----
-
-## 🎓 Learning Outcomes
-
-This project demonstrates proficiency in:
-
-- **Workflow Automation** – Building no-code data pipelines with n8n  
-- **Database Design** – Implementing star schema for analytics  
-- **ETL Development** – Extracting, transforming, loading supply chain data  
-- **AI Integration** – Leveraging AI for code generation and analysis  
-- **Business Analytics** – Calculating and interpreting supply chain KPIs  
-- **Data Visualization** – Creating actionable dashboards  
-- **Problem Solving** – Translating business problems into technical solutions  
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how you can help:
-
-### Reporting Issues
-
-- Use GitHub Issues to report bugs or suggest features  
-- Provide detailed description, steps to reproduce, and expected behavior  
-
-### Making Contributions
-
-1. **Fork the repository**
-
-   ```bash
-   # Click "Fork" button on GitHub
-   ```
-
-2. **Create a feature branch**
-
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Make your changes**
-   - Follow existing code style  
-   - Add comments for complex logic  
-   - Update documentation if needed  
-
-4. **Commit your changes**
-
-   ```bash
-   git add .
-   git commit -m "Add: Brief description of changes"
-   ```
-
-5. **Push to your fork**
-
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-6. **Create Pull Request**
-   - Go to original repository on GitHub  
-   - Click "New Pull Request"  
-   - Select your fork and branch  
-   - Describe your changes clearly  
-
-### Development Guidelines
-
-- Write clear, self-documenting code  
-- Include docstrings for Python functions  
-- Test your changes before submitting  
-- Update README if adding new features  
-- Ensure backward compatibility  
-
----
-
-## 📝 License
-
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
-
-```text
-MIT License
-
-Copyright (c) 2026 Arpit Dalal
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
----
-
-## 👨‍💻 Developed by
-
-**Arpit Dalal**
-
-- 💼 **LinkedIn:** [linkedin.com/in/arpitdalal9](https://www.linkedin.com/in/arpitdalal9/)  
-- 🐙 **GitHub:** [github.com/arpitdalal7](https://github.com/arpitdalal7)  
-- 📂 **Project Repository:** [ai-supplychain-analytics](https://github.com/arpitdalal7/ai-supplychain-analytics)  
-
----
-
-<div align="center">
-
-**Built with 🧠 AI • ⚡ Automation • 📊 Data**  
-
-*Transforming supply chain operations through intelligent analytics*
-
-</div>
-```
+## 🎯 Pro Tips
+
+1. **Add a License file** if you want to specify how others can use your work
+2. **Add a .gitignore** to exclude large files or sensitive data
+3. **Consider PDF versions** of DOCX files for easier viewing on GitHub
+4. **Add screenshots** of your dashboard to make README more attractive
+5. **Use GitHub Releases** for versioned downloads of documentation
+
+Would you like me to create an updated version of the complete README with all properly formatted clickable links?
