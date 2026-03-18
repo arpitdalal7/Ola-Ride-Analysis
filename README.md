@@ -357,8 +357,8 @@ Contributions are welcome! Feel free to:
 
 **Your Name**  
 📧 Email: your.email@example.com  
-💼 LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)  
-🐙 GitHub: [@yourusername](https://github.com/yourusername)
+💼 LinkedIn: [linkedin.com/in/arpitdalal9](https://linkedin.com/in/arpitdalal9)  
+🐙 GitHub: [@arpitdalal7](https://github.com/arpitdalal7)
 
 ***
 
@@ -372,7 +372,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Dataset created using ChatGPT for educational purposes
 - Inspired by real-world ride-hailing industry analytics
-- Tutorial reference: [Top Varsity YouTube Channel](https://www.youtube.com/@TopVarSity)
+- Tutorial reference: [The Developer YouTube Channel](https://www.youtube.com/@The-Developer-BI)
 
 ***
 
