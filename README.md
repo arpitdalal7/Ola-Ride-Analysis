@@ -356,7 +356,6 @@ Contributions are welcome! Feel free to:
 ## 📧 Contact
 
 **Your Name**  
-📧 Email: your.email@example.com  
 💼 LinkedIn: [linkedin.com/in/arpitdalal9](https://linkedin.com/in/arpitdalal9)  
 🐙 GitHub: [@arpitdalal7](https://github.com/arpitdalal7)
 
